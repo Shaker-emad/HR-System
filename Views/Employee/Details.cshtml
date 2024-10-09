@@ -1,0 +1,39 @@
+﻿@model project12.Models.Employee
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4 mb-4 bg-white rounded">
+                <div class="text-center mb-4">
+                    <img src="~/Image/@Model.Image" alt="@Model.FirstName's image" class="img-fluid rounded-circle border" style="width: 180px; height: 180px;" />
+                    <h2 class="mt-3">@Model.FirstName @Model.LastName</h2>
+                    <h5 class="text-muted">@Model.Position</h5>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span class="text-muted">@Model.Email</span></p>
+                        <p><strong><i class="fas fa-phone"></i> Phone:</strong> <span class="text-muted">@Model.Phone</span></p>
+                        <p><strong><i class="fas fa-briefcase"></i> Department:</strong> <span class="text-muted">
+                                @Model.Department?.DepartmentName
+                        </span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong><i class="fas fa-birthday-cake"></i> Date Of Birth:</strong> <span class="text-muted">@Model.DateOfBirth.ToShortDateString()</span></p>
+                        <p><strong><i class="fas fa-dollar-sign"></i> Salary:</strong> <span class="text-muted">@Model.Salary.ToString("C")</span></p>
+                        <p><strong><i class="fas fa-calendar-alt"></i> Hire Date:</strong> <span class="text-muted">@Model.HireDate.ToShortDateString()</span></p>
+                        <p><strong><i class="fas fa-venus-mars"></i> Gender:</strong> <span class="text-muted">@Model.Gender</span></p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="@Url.Action("Index", "Employee")" class="btn btn-primary">
+                        <i class="fas fa-arrow-left"></i> Back to Index
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
